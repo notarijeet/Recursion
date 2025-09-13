@@ -38,6 +38,26 @@ int stair(int n){
     return stair(n-1) + stair(n-2);
 }
 
+
+
+//say digits;
+void sayDigit(int n, string array[]){
+    if(n==0){
+        return;
+        
+    }
+    
+    //processing;
+    int digit = n%10;
+    n = n/10;
+    cout<<array[n]<<" ";
+    
+    //recursive call;
+    sayDigit(n,array);
+    
+}
+
+
 int main() {
     int n;
 
@@ -64,6 +84,14 @@ int main() {
     cout << "\nEnter nth number of fibonacci: ";
     cin >> n;
     cout << "Fibonacci is: " << fibonacci(n) << endl;
+
+
+    string array[10] = {"zero","one","three","four","five","six","seven","eight","nine","ten"};
+    int n;
+    cin>>n;
+    sayDigit(n,array);
+
+    
 
     return 0;
 }
